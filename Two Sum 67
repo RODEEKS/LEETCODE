@@ -1,0 +1,54 @@
+ 
+Solution:-   
+ 
+import java.io.*;
+import java.text.*;
+
+public
+class Solution
+{
+
+public
+    static int[] twoSum(int[] numbers, int target)
+    {
+        int[] result = new int[2];
+
+        for (int i = 0; i < numbers.length; i++)
+        {
+            for (int j = i + 1; j < numbers.length; j++)
+            {
+                if (numbers[i] + numbers[j] == target)
+                {
+                    result[0] = i;
+                    result[1] = j;
+                    return result;
+                }
+            }
+        }
+
+        return result;
+    }
+
+public
+    static void main(String[] args)
+    {
+
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        int arr[] = new int[n];
+
+        for (int i = 0; i < n; i++)
+        {
+            arr[i] = sc.nextInt();
+        }
+
+        int target = sc.nextInt();
+
+        int ans[] = twoSum(arr, target);
+        for (int i = 0; i < 2; i++)
+        {
+            System.out.print(ans[i] + " ");
+        }
+    }
+}
