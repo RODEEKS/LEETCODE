@@ -1,0 +1,48 @@
+Solutions:-
+
+import java.io.*;
+import java.util.*;
+
+public class Solution
+{
+
+public static int bestTimetobuyandsellStock(int[] prices)
+    {
+        int ans = 0;
+        int bought = prices[0];
+        for (int i = 1; i < prices.length; i++)
+        {
+            if (bought < prices[i])
+            {
+                if (ans < (prices[i] - bought))
+                {
+                    ans = prices[i] - bought;
+                }
+            }
+            else
+            {
+                bought = prices[i];
+            }
+        }
+        return ans;
+    }
+
+public
+    static void main(String[] args)
+    {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        int arr[] = new int[n];
+
+        for (int i = 0; i < n; i++)
+        {
+            arr[i] = sc.nextInt();
+        }
+
+        int ans = bestTimetobuyandsellStock(arr);
+        System.out.print(ans);
+    }
+}
