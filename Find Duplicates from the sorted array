@@ -1,0 +1,40 @@
+Solution : -
+
+    import java.util.*;
+
+public
+class Solution
+{
+public static int findDuplicates(int[] nums)
+    {
+        for (int i = 0; i < nums.length - 1; i++)
+        {
+            for (int j = i + 1; j < nums.length; j++)
+            {
+                if (nums[i] == nums[j])
+                {
+                    return nums[i];
+                }
+            }
+        }
+        return -1;
+    }
+
+public static void main(String[] args) throws NumberFormatException, IOException
+    { 
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        int arr[] = new int[n];
+
+        for (int i = 0; i < n; i++)
+        {
+            arr[i] = sc.nextInt();
+        }
+
+        int ans = findDuplicates(arr);
+        System.out.print(ans);
+    }
+}
